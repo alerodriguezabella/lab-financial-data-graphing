@@ -8,9 +8,6 @@ const searchButton = document.getElementById("search");
 let startDate, endDate;
 let currency = "USD";
 
-// const apiUrl = `http://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}&currency=${currency}`
-// const apiUrl = "https://api.coindesk.com/v1/bpi/historical/close.json?start=2013-09-01&end=2013-09-05";
-
 const getData = () => {
   const apiUrl = `http://api.coindesk.com/v1/bpi/historical/close.json?start=${startDate}&end=${endDate}&currency=${currency}`;
     axios
@@ -28,8 +25,6 @@ searchButton.addEventListener("click", function () {
   endDate = dateTo.value;
   getData();
 });
-
-getData();
 
 function printTheChart(coinDeskData) {
   const dates = Object.keys(coinDeskData.bpi);
